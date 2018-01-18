@@ -5,8 +5,8 @@ from flask_restful import Resource, Api, reqparse
 from sqlalchemy import create_engine
 from json import dumps
 
-app = Flask(__name__)
-api = Api(app)
+application = Flask(__name__)
+api = Api(application)
 
 class GetToken(Resource):
     def post(self):
@@ -26,4 +26,5 @@ api.add_resource(GetToken, '/')
 
 
 if __name__ == '__main__':
-     app.run()
+     application.debug = True
+     application.run()
